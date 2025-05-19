@@ -23,9 +23,12 @@ Two popular methods for gaining access to that first set of AD credentials is Op
 This means that the application is authenticating on behalf of the user and not authenticating the user directly on the application itself. This prevents the application from storing AD credentials, which should only be stored on a DC.
 
 ![image](https://github.com/user-attachments/assets/ab62dc18-43b4-4bb4-842f-0bff8494c12a)
+
 ---
 
 # LDAP (Lightweight Directory Access Protocol):
+
+~ Default port of LDAP is 389
 
 ~ LDAP authentication is similar to NTLM authentication. However, with LDAP authentication, the application directly verifies the user's credentials. The application has a pair of AD credentials that it can use first to query LDAP and then verify the AD user's credentials.
 
@@ -39,8 +42,40 @@ This means that the application is authenticating on behalf of the user and not 
 
 LDAP Pass-back attack is a common attack against network devices, such as printers, when you have gained initial access to the internal network, such as plugging in a rogue device in a boardroom.
 
+LDAP Pass-back attacks can be performed when we gain access to a device's configuration where the LDAP parameters are specified. This can be, for example, the web interface of a network printer. Usually, the credentials for these interfaces are kept to the default ones, such as admin:admin or admin:password. Here, we won't be able to directly extract the LDAP credentials since the password is usually hidden. However, we can alter the LDAP config, such as the IP or hostname of the LDAP server. In an LDAP Pass-back attack, we can modify this IP to our IP and then test the LDAP configuration, which will force the device to attempt LDAP authentication to our rogue device. We can intercept this authentication attempt to recover the LDAP credentials.
 
-LDAP Pass-back attacks can be performed when we gain access to a device's configuration where the LDAP parameters are specified. This can be, for example, the web interface of a network printer. Usually, the credentials for these interfaces are kept to the default ones, such as admin:admin or admin:password. Here, we won't be able to directly extract the LDAP credentials since the password is usually hidden. However, we can alter the LDAP configuration, such as the IP or hostname of the LDAP server. In an LDAP Pass-back attack, we can modify this IP to our IP and then test the LDAP configuration, which will force the device to attempt LDAP authentication to our rogue device. We can intercept this authentication attempt to recover the LDAP credentials.
+![image](https://github.com/user-attachments/assets/ec0f24fd-2829-4235-9505-74e5676072b5)
+
+# Hosting a Rogue LDAP Server:
+
+sudo apt-get update && sudo apt-get -y install slapd ldap-utils && sudo systemctl enable slapd
+
+sudo dpkg-reconfigure -p low slapd
+
+![image](https://github.com/user-attachments/assets/274e6d6a-4e2b-4559-a11b-136a1d3e383c)
+
+sudo ldapmodify -Y EXTERNAL -H ldapi:// -f ./olcSaslSecProps.ldif && sudo service slapd restart
+
+Capturing LDAP Credentials:  
+sudo tcpdump -SX -i breachad tcp port 389
+
+---
+
+# Authentication Relays:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
