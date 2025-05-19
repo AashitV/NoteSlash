@@ -38,7 +38,7 @@ This means that the application is authenticating on behalf of the user and not 
 ![image](https://github.com/user-attachments/assets/4e54b4f1-6094-4cf2-b5a9-adcbbbc42411)
 
 
-# LDAP Pass-back:
+**# LDAP Pass-back:**
 
 LDAP Pass-back attack is a common attack against network devices, such as printers, when you have gained initial access to the internal network, such as plugging in a rogue device in a boardroom.
 
@@ -46,7 +46,7 @@ LDAP Pass-back attacks can be performed when we gain access to a device's config
 
 ![image](https://github.com/user-attachments/assets/ec0f24fd-2829-4235-9505-74e5676072b5)
 
-# Hosting a Rogue LDAP Server:
+**# Hosting a Rogue LDAP Server:**
 
 sudo apt-get update && sudo apt-get -y install slapd ldap-utils && sudo systemctl enable slapd
 
@@ -63,7 +63,13 @@ sudo tcpdump -SX -i breachad tcp port 389
 
 # Authentication Relays:
 
+In Windows networks, there are a significant amount of services talking to each other, allowing users to make use of the services provided by the network.
 
+These services have to use built-in authentication methods to verify the identity of incoming connections.
+
+~ Here, focus on NetNTLM authentication used by SMB.
+
+**#SMB:**
 
 
 
