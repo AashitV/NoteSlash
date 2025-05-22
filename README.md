@@ -4,11 +4,11 @@ Quick Slash with Cheatsheet
 ---
 Reference From TryHackMe~
 ---
-## 🔰 Initial Access (From: Breaching Active Directory)
+# 🔰 Initial Access (From: Breaching Active Directory)
 
 Two popular methods for gaining access to that first set of AD credentials is Open Source Intelligence (OSINT) and Phishing.
 
-# NTLM (New Technology LAN Manager):
+## NTLM (New Technology LAN Manager):
 
 ~ Suite of security protocols used to authenticate users' identities in AD.
 
@@ -26,7 +26,7 @@ This means that the application is authenticating on behalf of the user and not 
 
 ---
 
-# LDAP (Lightweight Directory Access Protocol):
+## LDAP (Lightweight Directory Access Protocol):
 
 ~ Default port of LDAP is 389
 
@@ -61,7 +61,7 @@ sudo tcpdump -SX -i breachad tcp port 389
 
 ---
 
-# Authentication Relays:
+## Authentication Relays:
 
 In Windows networks, there are a significant amount of services talking to each other, allowing users to make use of the services provided by the network.
 
@@ -74,6 +74,7 @@ These services have to use built-in authentication methods to verify the identit
 SMB protocol allows clients (like workstations) to communicate with a server (like a file share). In networks that use Microsoft AD, SMB governs everything from inter-network file-sharing to remote administration. Even the "out of paper" alert your computer receives when you try to print a document is the work of the SMB protocol.
 
 **# LLMNR, NBT-NS, and WPAD**
+
 In this task, we will take a bit of a look at the authentication that occurs during the use of SMB. We will use Responder to attempt to intercept the NetNTLM challenge to crack it. There are usually a lot of these challenges flying around on the network. Some security solutions even perform a sweep of entire IP ranges to recover information from hosts. Sometimes due to stale DNS records, these authentication challenges can end up hitting your rogue device instead of the intended host.
 
 Responder allows us to perform Man-in-the-Middle attacks by poisoning the responses during NetNTLM authentication, tricking the client into talking to you instead of the actual server they wanted to connect to. On a real LAN, Responder will attempt to poison any  Link-Local Multicast Name Resolution (LLMNR),  NetBIOS Name Service (NBT-NS), and Web Proxy Auto-Discovery (WPAD) requests that are detected. On large Windows networks, these protocols allow hosts to perform their own local DNS resolution for all hosts on the same local network. Rather than overburdening network resources such as the DNS servers, hosts can first attempt to determine if the host they are looking for is on the same local network by sending out LLMNR requests and seeing if any hosts respond. The NBT-NS is the precursor protocol to LLMNR, and WPAD requests are made to try and find a proxy for future HTTP(s) connections.
@@ -99,7 +100,7 @@ Use hashtype 5600, which corresponds with NTLMv2-SSP for hashcat.
 
 ---
 
-# Microsoft Deployment Toolkit (MDT)
+## Microsoft Deployment Toolkit (MDT)
 
 ~ A Microsoft service that assists with automating the deployment of Microsoft Operating Systems (OS). Large organisations use services such as MDT to help deploy new images in their estate more efficiently since the base images can be maintained and updated in a central location.
 
@@ -127,14 +128,14 @@ A BCD (Boot Configuration Data) file is a configuration file used by Windows to 
 
 ---
 
-# Config Files
+## Config Files
 
 
 
 
 ---
 
-## 🔰 Initial Access (From: Breaching Active Directory)
+# 🔰 Initial Access (From: Breaching Active Directory)
 
 
 
