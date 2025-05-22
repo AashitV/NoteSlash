@@ -89,9 +89,40 @@ Although Responder would be able to intercept and poison more authentication req
 https://github.com/lgandx/Responder. We will set Responder to run on the interface connected to the VPN: 
 sudo responder -I breachad
 
+![image](https://github.com/user-attachments/assets/a42e2803-c056-48f4-a30f-022d81628bc1)
+
+Use hashtype 5600, which corresponds with NTLMv2-SSP for hashcat.
+
+**# Relaying the challenge***
+
+![image](https://github.com/user-attachments/assets/9be38888-3720-414a-8f3b-7a07e6679de2)
+
+---
+
+# Microsoft Deployment Toolkit (MDT)
+
+~ A Microsoft service that assists with automating the deployment of Microsoft Operating Systems (OS). Large organisations use services such as MDT to help deploy new images in their estate more efficiently since the base images can be maintained and updated in a central location.
+
+~ Usually, MDT is integrated with Microsoft's System Center Configuration Manager (SCCM), which manages all updates for all Microsoft applications, services, and operating systems. MDT is used for new deployments. Essentially it allows the IT team to preconfigure and manage boot images. Hence, if they need to configure a new machine, they just need to plug in a network cable, and everything happens automatically.
+
+~ SCCM can be seen as almost an expansion and the big brother to MDT. What happens to the software after it is installed? Well, SCCM does this type of patch management. It allows the IT team to review available updates to all software installed across the estate. The team can also test these patches in a sandbox environment to ensure they are stable before centrally deploying them to all domain-joined machines. It makes the life of the IT team significantly easier.
+
+**# Preboot Ex
+ecution Environment (PXE) boot**
+
+![image](https://github.com/user-attachments/assets/5dbaacef-3bd8-4f1e-8b87-dcc8fc723d01)
+
+**# PXE Boot Image Retrieval**
+
+![image](https://github.com/user-attachments/assets/5c7de561-a25f-443e-bee7-77654e4b0660)
+
+A BCD (Boot Configuration Data) file is a configuration file used by Windows to determine how to boot. It stores information about which operating systems to load, their locations, and boot parameters.
 
 
 
+---
+
+## 🔰 Initial Access (From: Breaching Active Directory)
 
 
 
