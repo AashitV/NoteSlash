@@ -115,8 +115,20 @@ ecution Environment (PXE) boot**
 **# PXE Boot Image Retrieval**
 
 ![image](https://github.com/user-attachments/assets/5c7de561-a25f-443e-bee7-77654e4b0660)
+ssh thm@THMJMP1.za.tryhackme.com and the password of Password1@.
 
 A BCD (Boot Configuration Data) file is a configuration file used by Windows to determine how to boot. It stores information about which operating systems to load, their locations, and boot parameters.
+
+![image](https://github.com/user-attachments/assets/854f4978-9966-40ce-8f63-086fdeaf3697)
+
+**# Recovering Credentials from a PXE Boot Image**
+
+![image](https://github.com/user-attachments/assets/baa55d4d-16b6-47f4-bc09-1f3de143dd02)
+
+---
+
+# Config Files
+
 
 
 
