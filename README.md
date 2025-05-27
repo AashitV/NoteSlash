@@ -116,7 +116,7 @@ ecution Environment (PXE) boot**
 **# PXE Boot Image Retrieval**
 
 ![image](https://github.com/user-attachments/assets/5c7de561-a25f-443e-bee7-77654e4b0660)
-ssh thm@THMJMP1.za.tryhackme.com and the password of Password1@.
+" ssh thm@THMJMP1.za.tryhackme.com " and the password of Password1@.
 
 A BCD (Boot Configuration Data) file is a configuration file used by Windows to determine how to boot. It stores information about which operating systems to load, their locations, and boot parameters.
 
@@ -129,6 +129,28 @@ A BCD (Boot Configuration Data) file is a configuration file used by Windows to 
 ---
 
 ## Config Files
+
+Depending on the host that was breached, various configuration files may be of value for enumeration: 
+
+Web application config files, 
+
+Service configuration files,
+
+Registry keys,
+
+Centrally deployed applications.
+
+Several enumeration scripts, such as Seatbelt, can be used to automate this process.
+
+**# Configuration File Credentials**
+
+We will focus on recovering credentials from a centrally deployed application in this task. Usually, these applications need a method to authenticate to the domain during both the installation and execution phases. An example of such as application is McAfee Enterprise Endpoint Security, which organisations can use as the endpoint detection and response tool for security.
+
+McAfee embeds the credentials used during installation to connect back to the orchestrator in a file called ma.db. This database file can be retrieved and read with local access to the host to recover the associated AD service account.
+
+![image](https://github.com/user-attachments/assets/8bca570b-e49a-46e3-8037-00fc0c9a6d1c)
+
+![image](https://github.com/user-attachments/assets/e649316b-f295-40d8-99af-2c5e2ea8223c)
 
 
 
