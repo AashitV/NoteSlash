@@ -150,14 +150,17 @@ McAfee embeds the credentials used during installation to connect back to the or
 
 ![image](https://github.com/user-attachments/assets/8bca570b-e49a-46e3-8037-00fc0c9a6d1c)
 
-![image](https://github.com/user-attachments/assets/e649316b-f295-40d8-99af-2c5e2ea8223c)
+![image](https://github.com/user-attachments/assets/58dab6f4-3870-474a-bcec-9d610178cf98)
 
+![image](https://github.com/user-attachments/assets/8996d89c-22c7-407d-9088-7e87a4006a52)
+
+![image](https://github.com/user-attachments/assets/a30f5eae-d0cd-4e16-9ef8-14419c99b5dc)
 
 
 
 ---
 
-# 🔰 Initial Access (From: Breaching Active Directory)
+# 🔰 Initial Access (From: Enumerating Active Directory)
 
 
 
